@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  --gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+  --pale-blue: hsl(229, 7%, 55%);
+  --grayish-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --base-fs: 0.875rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Raleway", sans-serif;
+  background-image: url(/images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-width: 20.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.firstsection {
+  background-color: var(--grayish-blue);
+  border-radius: 0.5rem;
+  border-top-right-radius: 6.25rem;
+  padding-block: 2.5rem;
+}
+
+.logo {
+  padding-left: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.icon {
+  display: flex;
+  padding-left: 2.5rem;
+}
+.icon img {
+  background-color: var(--very-dark-blue);
+  padding: 0.74rem;
+  border-radius: 0.5rem;
+}
+.icon__gap {
+  margin-inline: 1rem;
+}
+
+.secondsection {
+  padding-block: 2rem 3rem;
+  padding-inline: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--grayish-blue);
+  text-align: center;
+  position: relative;
+}
+.secondsection p {
+  color: hsl(229deg, 77%, 83%);
+}
+.secondsection p span {
+  color: hsl(229deg, 100%, 91%);
+  font-weight: 600;
+}
+
+.text {
+  padding-bottom: 1rem;
+}
+
+.tracker {
+  background-color: var(--very-dark-blue);
+  border-radius: 0.8rem;
+  height: 1rem;
+  position: relative;
+}
+
+.tracker::before {
+  content: "";
+  display: block;
+  background: linear-gradient(to right, hsl(6deg, 100%, 80%), hsl(335deg, 100%, 65%));
+  height: 0.875rem;
+  border-radius: 0.8rem;
+  transform: translateY(1px);
+  margin-right: 64px;
+}
+
+.tracker::after {
+  content: "";
+  display: block;
+  background-color: white;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 64px;
+  transform: translateY(3px);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  color: hsl(229deg, 77%, 83%);
+  font-weight: 600;
+  padding-top: 0.6rem;
+}
+
+.notification {
+  text-align: center;
+  color: var(--pale-blue);
+  font-weight: 600;
+  font-size: var(--base-fs);
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 0.94rem;
+  border-radius: 0.5rem;
+  max-width: 179px;
+  transform: translateX(33%);
+  position: absolute;
+  top: 80%;
+}
+.notification span {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+}
+
+@media all and (min-width: 900px) {
+  body {
+    background-image: url(/images/bg-desktop.png);
+    background-size: 100vw 50vh;
+    background-position: bottom;
+    background-color: var(--very-dark-blue);
+  }
+
+  .container {
+    flex-direction: row;
+    min-width: 920px;
+  }
+
+  .firstsection {
+    width: 33%;
+  }
+
+  .secondsection {
+    width: 66%;
+    padding-inline: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .tracker::before {
+    width: 80%;
+  }
+
+  .tracker::after {
+    position: absolute;
+    left: 78%;
+  }
+
+  .notification {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    left: 63%;
+    transform: translateY(-73%);
+    border-bottom-right-radius: 0px;
+  }
+
+  .notification::after {
+    content: "";
+    display: block;
+    background-color: hsl(0deg, 0%, 100%);
+    height: 1.375rem;
+    width: 1.375rem;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    transform: translateY(22px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
