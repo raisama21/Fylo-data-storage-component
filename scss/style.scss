@@ -156,6 +156,7 @@ main {
   .container {
     flex-direction: row;
     min-width: 920px;
+    align-items: flex-end;
   }
 
   .firstsection {
@@ -197,7 +198,7 @@ main {
     right: 0%;
     bottom: 0%;
 
-    transform: translateY(22px);
+    transform: translateY(21px);
     clip-path: polygon(0 0, 100% 0, 100% 100%);
   }
 }
